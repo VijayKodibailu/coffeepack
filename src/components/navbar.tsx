@@ -7,7 +7,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 export const Navbar = () =>{
 
     const navigation = [
-        { name: 'Product', href: '#' },
+        { name: 'Dashboard', href: '/dashboard' },
         { name: 'Features', href: '#' },
         { name: 'Marketplace', href: '#' },
         { name: 'Company', href: '#' },
@@ -22,6 +22,7 @@ export const Navbar = () =>{
           preserveAspectRatio="none"
           aria-hidden="true"
         >
+  
           <polygon points="50,0 100,0 50,100 0,100" />
         </svg>
 
@@ -30,11 +31,13 @@ export const Navbar = () =>{
             <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
               <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                 <div className="flex items-center justify-between w-full md:w-auto">
-                  <a href="#">
+                  <a href="/">
                     <span className="sr-only">Workflow</span>
                     <img
                       className="h-8 w-auto sm:h-10"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                      // src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+
+                      src="/logo.png"
                     />
                   </a>
                   <div className="-mr-2 flex items-center md:hidden">
@@ -76,7 +79,8 @@ export const Navbar = () =>{
                   <div>
                     <img
                       className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                      // src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                      src="/logo.png"
                       alt=""
                     />
                   </div>

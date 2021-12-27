@@ -27,7 +27,6 @@ export async function storefront(query: any, variables={}) {
       const data = await fetch(URL, options).then(response => {
         return response.json()
       })
-    //   console.log('data server', data)
   
       return data
     } catch (error) {
