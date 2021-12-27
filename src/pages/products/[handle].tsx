@@ -2,6 +2,7 @@ import { formatPrice, storefront } from "../../utils"
 import {format} from 'date-fns'
 import Link from "next/link"
 import {useState} from 'react'
+import { NavBar } from "../../components/NavBar"
 
 
 const gql = String.raw
@@ -14,7 +15,6 @@ export default function ProductHandle({product, products}:any) {
     const [isLoading, setIsLoading] = useState(false)
     const image = product.images.edges[0].node
     const variantId = product.variants.edges[0].node.id 
-    console.log('variant id: ', variantId)
     const relatedProducts = products.edges
         .filter((item: { node: { handle: any } }) => item.node.handle !== product.handle)
         .slice(0, 4)
@@ -28,7 +28,18 @@ export default function ProductHandle({product, products}:any) {
     }
 
   return (
+      <>
+<div className='
+     bg-amber-900     
+
+     w-full
+'
+    >
+
+<NavBar />
+</div>
       <main className="mx-auto pt-14 px-4 sm:pt-24 sm:pb-32 sm:px-6 lg:max-w-7xl lg:px-8">
+
           {/* Product */}
           <div className="lg:grid lg:grid-cols-7 lg:gap-x-8 lg:gap-y010 xl:gap-x-16">
               {/*product image */}
@@ -67,7 +78,7 @@ export default function ProductHandle({product, products}:any) {
                 <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
                 <button 
                 onClick={checkout}
-                    type="button"
+                type="button"
                     className="w-full bg-gray-900 border border-transparent rounded-md py-3
                     px-8 flex items-center justify-center text-base font-medium text-white
                     hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2
@@ -129,7 +140,7 @@ export default function ProductHandle({product, products}:any) {
                         {relatedProducts.map((item: { node: any }) => {
                             const product = item.node 
                             const image = product.images.edges[0].node 
-
+                            
                             return (
                                 <div key={product.handle} className="relative group">
                                     <div className="aspect-w-4 aspect-h-3 rounded-lg 
@@ -164,6 +175,7 @@ export default function ProductHandle({product, products}:any) {
                 </div>
             </div>
       </main>
+</>
   )
 }
 
